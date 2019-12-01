@@ -31,5 +31,5 @@ for(i =0; i< 1000; i++){ //number_of_questions
         question_earning = "€0.00"
     }   
     //console.log(question_text+"|"+question_earning);
-    csv += question_text+"\t"+question_earning+"\t"+external_traffic+"\t"+question_views +"\t"+question_number_of_answers +"\n";
+    csv += question_text+";"+question_earning+";"+external_traffic+";"+question_views +";"+question_number_of_answers +"\n";
 }
