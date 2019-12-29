@@ -1,7 +1,7 @@
 var number_of_questions = document.getElementsByClassName("partners_question_list_item").length;
 var i =0;
 var csv = "";
-for(i =0; i< 1000; i++){ //number_of_questions
+for(i =0; i< 2000; i++){ //number_of_questions
   var element = document.getElementsByClassName("partners_question_list_item")[i];
   var question_text = "question text null";
   if(element.getElementsByClassName("ui_qtext_rendered_qtext")[0] != null){
@@ -26,10 +26,20 @@ for(i =0; i< 1000; i++){ //number_of_questions
     var external_traffic_number = parseInt(external_traffic)/100;
     external_traffic = "" + external_traffic_number;
   }
+  var topics = "";
+  var question_topics = element.getElementsByClassName("TopicName")[0];
+  if(question_topics != null){
+     topics = element.getElementsByClassName("TopicName")[0].innerText;
+  }
+  var topics_1 = "";
+  var question_topics_1 = element.getElementsByClassName("TopicName")[1];
+  if(question_topics_1 != null){
+     topics_1 = element.getElementsByClassName("TopicName")[1].innerText;
+  }
   if(!question_earning.includes("€")){
      //bad merged or excluded
         question_earning = "€0.00"
     }   
     //console.log(question_text+"|"+question_earning);
-    csv += question_text+";"+question_earning+";"+external_traffic+";"+question_views +";"+question_number_of_answers +"\n";
+    csv += question_text+";"+question_earning+";"+external_traffic+";"+question_views +";"+question_number_of_answers + ";" + topics + ";" + topics_1 + "\n";
 }
